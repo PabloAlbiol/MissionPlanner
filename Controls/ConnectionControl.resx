@@ -155,7 +155,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cmb_Baud.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 4</value>
+    <value>261, 4</value>
   </data>
   <data name="cmb_Baud.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 21</value>
@@ -174,10 +174,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmb_Baud.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cmb_ConnectionType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 28</value>
+    <value>210, 28</value>
   </data>
   <data name="cmb_ConnectionType.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
@@ -198,10 +198,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmb_ConnectionType.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cmb_Connection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 4</value>
+    <value>134, 4</value>
   </data>
   <data name="cmb_Connection.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
@@ -219,13 +219,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmb_Connection.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="linkLabel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 32</value>
+    <value>134, 32</value>
   </data>
   <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 13</value>
@@ -249,6 +249,39 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cmb_Header.Items" xml:space="preserve">
+    <value>No header</value>
+  </data>
+  <data name="cmb_Header.Items1" xml:space="preserve">
+    <value>SMS 054.126 </value>
+  </data>
+  <data name="cmb_Header.Items2" xml:space="preserve">
+    <value>SMS 000.000 </value>
+  </data>
+  <data name="cmb_Header.Items3" xml:space="preserve">
+    <value>SMB 123.456 </value>
+  </data>
+  <data name="cmb_Header.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 4</value>
+  </data>
+  <data name="cmb_Header.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 21</value>
+  </data>
+  <data name="cmb_Header.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;cmb_Header.Name" xml:space="preserve">
+    <value>cmb_Header</value>
+  </data>
+  <data name="&gt;&gt;cmb_Header.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmb_Header.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cmb_Header.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -258,7 +291,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 54</value>
+    <value>339, 54</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ConnectionControl</value>
