@@ -16,6 +16,7 @@ namespace MissionPlanner.Comms
 
     public class SerialPort : System.IO.Ports.SerialPort, ICommsSerial
     {
+        public string Header { get; set; } // PabloAG
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         static object locker = new object();

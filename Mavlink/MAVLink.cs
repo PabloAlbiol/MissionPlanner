@@ -598,6 +598,7 @@ Please check the following
             lock (objlock)
             {
                 byte[] data;
+                byte[] packetHeader; // PabloAG
 
                 data = MavlinkUtil.StructureToByteArray(indata);
 
@@ -635,7 +636,20 @@ Please check the following
 
                 if (BaseStream.IsOpen)
                 {
-                    BaseStream.Write(packet, 0, i);
+                    // PabloAG
+                    if (BaseStream.Header != "No header")
+                    {
+                        packetHeader = new byte[data.Length + 6 + 2 + BaseStream.Header.Length];
+                        System.Buffer.BlockCopy(BaseStream.Header.ToCharArray(), 0, packetHeader, 0, BaseStream.Header.Length);
+                        Array.Copy(packet, 0, packetHeader, BaseStream.Header.Length, data.Length + 6 + 2);
+                    }
+                    else
+                    {
+                        packetHeader = new byte[data.Length + 6 + 2];
+                        Array.Copy(packet, packetHeader, data.Length + 6 + 2);
+                    }
+
+                    BaseStream.Write(packetHeader, 0, i); // PabloAG
                     _bytesSentSubj.OnNext(i);
                 }
 

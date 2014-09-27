@@ -26,7 +26,7 @@ namespace MissionPlanner.Controls
         public ComboBox CMB_baudrate { get { return this.cmb_Baud; } }
         public ComboBox CMB_serialport { get { return this.cmb_Connection; } }
         public ComboBox TOOL_APMFirmware { get { return this.cmb_ConnectionType; } }
-        public ComboBox CMB_header { get { return this.cmb_Header; } }
+        public ComboBox CMB_header { get { return this.cmb_Header; } } // PabloAG
 
         /// <summary>
         /// Called from the main form - set whether we are connected or not currently.

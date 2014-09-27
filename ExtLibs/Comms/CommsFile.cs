@@ -106,6 +106,7 @@ namespace MissionPlanner.Comms
         // Properties
         public Stream BaseStream { get; private set; }
         public int BaudRate { get; set; }
+        public string Header { get; set; } // PabloAG
         public int BytesToRead { get { if (!BaseStream.CanRead) return 0; return (int)(BaseStream.Length - BaseStream.Position); } }
         public int BytesToWrite { get; set; }
         public int DataBits  { get; set; }

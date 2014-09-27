@@ -36,6 +36,8 @@ namespace MissionPlanner.Comms
             get { return (int)baud; }
         }
 
+        public string Header { get; set; } // PabloAG
+
         public MAVLinkSerialPort(MAVLinkInterface mavint, MAVLink.SERIAL_CONTROL_DEV port)
         {
             this.mavint = mavint;

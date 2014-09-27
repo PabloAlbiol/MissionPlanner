@@ -315,6 +315,7 @@ namespace MissionPlanner
 
             _connectionControl = toolStripConnectionControl.ConnectionControl;
             _connectionControl.CMB_baudrate.TextChanged += this.CMB_baudrate_TextChanged;
+            _connectionControl.CMB_header.TextChanged += this.CMB_header_TextChanged; // PabloAG
             _connectionControl.CMB_serialport.SelectedIndexChanged += this.CMB_serialport_SelectedIndexChanged;
             _connectionControl.CMB_serialport.Click += this.CMB_serialport_Click;
             _connectionControl.TOOL_APMFirmware.SelectedIndexChanged += this.TOOL_APMFirmware_SelectedIndexChanged;
@@ -346,6 +347,10 @@ namespace MissionPlanner
                 _connectionControl.TOOL_APMFirmware.SelectedIndex = 0;
 
             comPort.BaseStream.BaudRate = 115200;
+
+            // PabloAG
+            comPort.BaseStream.Header = "No header";
+            _connectionControl.CMB_header.SelectedIndex = 0;
 
             // ** Old
             //            CMB_serialport.Items.AddRange(SerialPort.GetPortNames());
@@ -874,9 +879,11 @@ namespace MissionPlanner
                 switch (_connectionControl.CMB_serialport.Text)
                 {
                     case "TCP":
+                        _connectionControl.CMB_header.SelectedIndex = 0; // PabloAG
                         comPort.BaseStream = new TcpSerial();
                         break;
                     case "UDP":
+                        _connectionControl.CMB_header.SelectedIndex = 0; // PabloAG
                         comPort.BaseStream = new UdpSerial();
                         break;
                     case "AUTO":
@@ -1092,9 +1099,15 @@ namespace MissionPlanner
             {
                 _connectionControl.CMB_baudrate.Enabled = false;
                 if (comPortName == "TCP")
+                {
+                    _connectionControl.CMB_header.SelectedIndex = 0; // PabloAG
                     MainV2.comPort.BaseStream = new TcpSerial();
+                }
                 if (comPortName == "UDP")
+                {
+                    _connectionControl.CMB_header.SelectedIndex = 0; // PabloAG
                     MainV2.comPort.BaseStream = new UdpSerial();
+                }
                 if (comPortName == "AUTO")
                 {
                     MainV2.comPort.BaseStream = new SerialPort();
@@ -2408,6 +2421,12 @@ namespace MissionPlanner
             catch (Exception)
             {
             }
+        }
+
+        // PabloAG
+        private void CMB_header_TextChanged(object sender, EventArgs e)
+        {
+            comPort.BaseStream.Header = _connectionControl.CMB_header.Text;
         }
 
         private void MainMenu_MouseLeave(object sender, EventArgs e)

@@ -33,6 +33,7 @@ namespace MissionPlanner.Comms
         // Properties
          Stream BaseStream { get; }
          int BaudRate { get; set; }
+         string Header { get; set; } // PabloAG
          //bool BreakState { get; set; }
          int BytesToRead { get; }
          int BytesToWrite { get; }
